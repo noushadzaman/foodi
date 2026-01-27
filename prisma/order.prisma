@@ -1,0 +1,13 @@
+enum OrderStatus {
+    PENDING
+    DELIVERED
+    RECEIVED
+}
+
+model Order {
+    id         String      @id @default(uuid())
+    menuId     String
+    menu       Menu        @relation(fields: [menuId], references: [id])
+    customerId String
+    status     OrderStatus
+}

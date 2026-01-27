@@ -1,0 +1,17 @@
+enum Rating {
+    ONE   @map("1")
+    TWO   @map("2")
+    THREE @map("3")
+    FOUR  @map("4")
+    FIVE  @map("5")
+}
+
+model Review {
+    id         String   @id @default(uuid())
+    customerId String
+    menuId     String
+    menu       Menu     @relation(fields: [menuId], references: [id])
+    content    String   @db.Text()
+    rating     Rating
+    createdAt  DateTime @default(now())
+}
