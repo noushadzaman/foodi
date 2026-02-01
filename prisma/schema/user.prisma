@@ -1,0 +1,13 @@
+model User {
+    id       String   @id @default(uuid())
+    name     String   @db.VarChar(20)
+    email    String   @unique
+    role     UserRole @default(CUSTOMER)
+    password String
+}
+
+enum UserRole {
+    CUSTOMER
+    PROVIDER
+    ADMIN
+}
