@@ -27,3 +27,20 @@ export const Rating = {
 } as const
 
 export type Rating = (typeof Rating)[keyof typeof Rating]
+
+
+export const UserRole = {
+  CUSTOMER: 'CUSTOMER',
+  PROVIDER: 'PROVIDER',
+  ADMIN: 'ADMIN'
+} as const
+
+export type UserRole = (typeof UserRole)[keyof typeof UserRole]
+
+
+export const UserStatus = {
+  SUSPEND: 'SUSPEND',
+  ACTIVATE: 'ACTIVATE'
+} as const
+
+export type UserStatus = (typeof UserStatus)[keyof typeof UserStatus]

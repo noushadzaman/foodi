@@ -11,4 +11,5 @@
 export type * from './models/Menu'
 export type * from './models/Order'
 export type * from './models/Review'
+export type * from './models/User'
 export type * from './commonInputTypes'
