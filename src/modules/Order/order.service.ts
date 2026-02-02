@@ -1,19 +1,18 @@
-const getUsersOrders = async () => {
+import { prisma } from "../../lib/prisma";
 
-}
+const getUsersOrders = async () => {};
 
-const getOrderDetails = async () => {
+const getOrderDetails = async () => {};
 
-}
-
-const createOrder = async (
-    // data: Order
-) => {
-
-}
+const createOrder = async (data: any) => {
+  const result = await prisma.order.post({
+    data,
+  });
+  return result;
+};
 
 export const OrderService = {
-    getUsersOrders,
-    getOrderDetails,
-    createOrder
-}
+  getUsersOrders,
+  getOrderDetails,
+  createOrder,
+};

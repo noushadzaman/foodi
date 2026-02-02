@@ -21,9 +21,9 @@ const getOrderDetails = async (req: Request, res: Response) => {
 
 const createOrder = async (req: Request, res: Response) => {
     try {
-        // const data = req.body;
+        const data = req.body;
         const result = await OrderService.createOrder(
-            // data
+            data
         );
         return result
     } catch (error) {

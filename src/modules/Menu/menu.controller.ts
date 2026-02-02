@@ -11,7 +11,15 @@ const getAllMeals = async (req: Request, res: Response) => {
 
 const getMealDetails = async (req: Request, res: Response) => {
     try {
-        const result = await MealService.getMealDetails();
+        const { mealId } = req.params;
+        if (!mealId) {
+            res.send({
+                message: "please provide valid mealId!",
+            })
+            return
+        }
+        const result = await MealService.getMealDetails(mealId as string);
+        res.send(result);
     } catch (error) {
         console.log(error)
     }
